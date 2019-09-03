@@ -33,6 +33,8 @@ class UUIDBehaviorSQL extends Behavior {
      * set beforeSave() -> UUID data
      */
     public function beforeSave() {
-        $this->owner->{$this->column} = $this->owner->getDb()->createCommand("SELECT REPLACE(UUID(),'-','')")->queryScalar();
+        if (!isset($this->owner->{$this->column})) {
+            $this->owner->{$this->column} = $this->owner->getDb()->createCommand("SELECT REPLACE(UUID(),'-','')")->queryScalar();
+        }
     }
 }
