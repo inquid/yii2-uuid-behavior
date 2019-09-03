@@ -2,8 +2,10 @@
 
 namespace inquid\behaviors;
 
+use Ramsey\Uuid\Uuid;
 use yii\base\Behavior;
 use yii\db\ActiveRecord;
+
 /*
  * UUID Behavior will set your ID with UUID for MySQL
  * @author INQUID INC <contact@inquid.co>
